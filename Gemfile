@@ -5,6 +5,7 @@ gem 'rails', '4.0.8'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2' 
+gem 'paperclip', '~> 3.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '0.15.1'
 
@@ -41,6 +42,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.0'
 end
 
 group :production do
