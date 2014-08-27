@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/default_:style.png"
+  validates_attachment :avatar,
+  :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
 
   def User.new_remember_token
 	SecureRandom.urlsafe_base64

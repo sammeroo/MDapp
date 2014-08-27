@@ -1,4 +1,5 @@
 MDapp::Application.routes.draw do
+  get "patients/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'
