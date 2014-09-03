@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903201755) do
+ActiveRecord::Schema.define(version: 20140903214123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,27 @@ ActiveRecord::Schema.define(version: 20140903201755) do
   end
 
   add_index "patients", ["pid"], name: "index_patients_on_pid", unique: true, using: :btree
+
+  create_table "pdads", force: true do |t|
+    t.integer  "patient_id"
+    t.string   "cough_nasal_hist"
+    t.string   "seasonal_symptoms"
+    t.string   "family_hist_nasal"
+    t.string   "family_hist_asthma"
+    t.string   "med_relief"
+    t.string   "steroid_response"
+    t.string   "intermittent_symp"
+    t.string   "cont_w_int_excb"
+    t.string   "high_ige"
+    t.string   "skin_allergy_hist"
+    t.string   "eczema_hist"
+    t.string   "conjunctiv_hist"
+    t.string   "drug_allergy_hist"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pdads", ["patient_id"], name: "index_pdads_on_patient_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
