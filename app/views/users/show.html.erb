@@ -1,18 +1,37 @@
 <% provide(:title , @user.name) %>
-<div class="container-fluid">
-  <div class="row">
-	<div class="col-sm-3 col-md-2 sidebar">
-	  <ul class ="nav nav-sidebar navlinks">
-		<li>
-	 	  <a href="#">Add Patient</a> 
-		</li>
-	  </ul>
-	</div>
-	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	<div class="avatar">
-	<%= image_tag @user.avatar.url(:thumb) %>
-	</div>
-	<h1 class="page-header"><%= @user.name %></h1>
-	</div>
+<div class="row", style="margin-top:50px;">
+  <div class="col-sm-10">
+    <h1 class="username"><%= @user.name %></h1>
+  </div>
+  <div class="col-sm-2">
+	<%= image_tag @user.avatar.url(:thumb), class:"pull-right" %>
+  </div>
+</div>
+<div class="row", style="padding-top:20px;">
+  <div class="col-sm-3">
+	<ul class="list-group">
+	  <li class="list-group-item text-muted">
+		Profile
+	  </li>
+	  <li class="list-group-item text-right">
+		<span class="pull-left">
+		  <strong>Joined</strong>
+	 	</span>
+		<%= @user.created_at.strftime("%d %b. %Y") %>
+	  </li>
+	  <li class="list-group-item text-right">
+		<span class="pull-left">
+		  <strong>Role</strong>
+	 	</span>
+		Admin
+	  </li>
+	</ul>
+  </div>
+  <div class="col-sm-9">
+	<ul id="myTab" class="nav nav-tabs">
+	  <li class="active">
+		<a data-toggle="tab" href="new_patient_path">Add Patient</a>
+	  </li>
+	</ul>
   </div>
 </div>

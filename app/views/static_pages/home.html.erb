@@ -1,9 +1,9 @@
 <% provide(:title, 'Home') %>
 
-<div class="center hero-unit">
+<div class="jumbotron">
   <h1>Welcome to MDapp</h1>
-  <h2> This is the MDapp home page </h2>
+  <p class="lead"> This is the MDapp home page </p>
   <% if !(signed_in?) %>
-  <%= link_to "Sign up now!", signup_path , class: "abc btn btn-large btn-primary" %>
+  <%= link_to "Sign up now!", signup_path , class:"btn btn-lg btn-success" %>
   <% end %>
 </div>

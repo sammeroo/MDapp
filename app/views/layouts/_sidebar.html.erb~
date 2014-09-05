@@ -1,0 +1,14 @@
+<% if signed_in? %>
+<div class="container-fluid">
+  <div class="row">
+	<div class="col-sm-3 col-md-2 sidebar">
+	  <ul class ="nav nav-sidebar navlinks">
+		<li>
+	 	  <%= link_to "Add Patient",    new_patient_path %>
+		</li>
+	  </ul>
+	</div>
+	
+  </div>
+</div>
+<% end %>
