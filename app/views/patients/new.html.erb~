@@ -1,53 +1,97 @@
 <% provide(:title , 'Add Patient' ) %>
-<h1>Add Patient</h1>
-<div class="row">
-  <div class="span6 offset3">
-	<%= form_for(@patient) do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	  <h2 > Add Patient </h2>
+	  <hr class="colorgraph"></hr>
+	  <%= form_for(@patient) do |f| %>
 	  <%= render 'shared/patient_error_messages' %>
+	  <div class="col-x6-12 col-sm-12 col-md-12">
 	  <%= f.label :name %>
 	  <%= f.text_field :name %>
-
+	  </div>
+	  <div class="col-x6-12 col-sm-12 col-md-12">
 	  <%= f.label :email %>
 	  <%= f.text_field :email %>
-
+	  </div>
+	  <div class="col-x6-4 col-sm-4 col-md-4 col-x6-offset-1 col-sm-offset-1 col-md-offset-1">
 	  <%= f.label :pid, "Patient ID" %>
 	  <%= f.text_field :pid %>
-
+	  </div>
+	  <div class="col-x6-5 col-sm-5 col-md-5 col-x6-offset-1 col-sm-offset-1 col-md-offset-1"">
 	  <%= f.label :occupation, "Occupation" %>
 	  <%= f.text_field :occupation %>
+	  </div>
 
-	  <%= f.label :age %>
-	  <%= f.text_field :age %>
+	  <div class="col-x6-3 col-sm-3 col-md-3" >
+	  <%= f.label :dob, "Date of Birth" %>
+	  <%= f.text_field :dob, :class => 'datepicker' %>
+	  </div>
 
+
+	  <div class="col-x6-3 col-sm-3 col-md-3">
 	  <%= f.label :sex %>
 	  <%= f.text_field :sex %>
+	  </div>
 	
+	  <div class="col-x6-6 col-sm-6 col-md-6">
 	  <%= f.label :avatar, "Photo" %>
 	  <%= f.file_field :avatar %>
+	  </div>
 
-	  <%= f.label :reference %>
+	  <div class="row spacer">
+   <div class="span4"></div>
+   <div class="span4"></div>
+   <div class="span4"></div>
+	</div>
+	  <div class="col-x6-6 col-sm-6 col-md-6" >
+	  <%= f.label :reference, "Referred by:" %>
 	  <%= f.text_field :reference %>
-
+	  </div>
+	
+	  <div class="col-x6-4 col-sm-4 col-md-4">
 	  <%= f.label :regdate %>
-	  <%= f.text_field :regdate %>
-
+	  <%= f.text_field :regdate, :class => 'datepicker'%>
+	  </div>
+	
+	  <div class="col-x6-2 col-sm-2 col-md-2">
 	  <%= f.label :PR %>
 	  <%= f.text_field :PR %>
+	  </div>
 
+	  <div class="row spacer">
+   <div class="span4"></div>
+   <div class="span4"></div>
+   <div class="span4"></div>
+	</div>
+
+	  <div class="col-x6-3 col-sm-3 col-md-3">
 	  <%= f.label :BP , "Blood Pressure"%>
 	  <%= f.text_field :BP %>
-
+      </div>
+	
+	  <div class="col-x6-2 col-sm-2 col-md-2">
 	  <%= f.label :Weight %>
 	  <%= f.text_field :Weight %>
+	  </div>	
 
+	  <div class="col-x6-3 col-sm-3 col-md-3">
 	  <%= f.label :Height %>
 	  <%= f.text_field :Height %>
+	  </div>
 
+	  <div class="col-x6-3 col-sm-3 col-md-3">
 	  <%= f.label :SaO2 %>
 	  <%= f.text_field :SaO2 %>
-
-	  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-
+	  </div>	  
+		
+	  <div class="col-x6-12 col-sm-12 col-md-12">
+		<hr class="colorgraph"></hr>
+	  </div>	  
+	  <div class="col-xs-6 col-md-6">
+	  <%= f.submit "Create Patient", class: "btn btn-lg btn-block btn-primary col-xs-offset-5 col-md-offset-5", style:"margin-top:40px;" %>
+	  </div>
 	<% end %>
+	
   </div>
 </div>

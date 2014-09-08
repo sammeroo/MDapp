@@ -10,10 +10,10 @@
   <body>
 	<%= render 'layouts/header' %>
 	<div class="container">
+	  <%= render 'shared/patient_error_messages' %>
 	  <% flash.each do |key, value| %>
 		<div class="alert alert-<%= key %>"><%= value %></div>
 	  <% end %>
-	  <%= render 'layouts/sidebar' %>
 	  <%= yield %>
 	  
 	</div>

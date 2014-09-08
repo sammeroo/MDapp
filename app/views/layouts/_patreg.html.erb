@@ -1,0 +1,47 @@
+<%= form_for(@patient) do |f| %>
+	  <%= render 'shared/patient_error_messages' %>
+	  <%= f.label :name %>
+	  <%= f.text_field :name %>
+
+	  <%= f.label :email %>
+	  <%= f.text_field :email %>
+
+	  <%= f.label :pid, "Patient ID" %>
+	  <%= f.text_field :pid %>
+
+	  <%= f.label :occupation, "Occupation" %>
+	  <%= f.text_field :occupation %>
+
+	  <%= f.label :dob, "Date of Birth" %>
+	  <%= f.text_field :dob %>
+
+	  <%= f.label :sex %>
+	  <%= f.text_field :sex %>
+	
+	  <%= f.label :avatar, "Photo" %>
+	  <%= f.file_field :avatar %>
+
+	  <%= f.label :reference %>
+	  <%= f.text_field :reference %>
+
+	  <%= f.label :regdate %>
+	  <%= f.text_field :regdate %>
+
+	  <%= f.label :PR %>
+	  <%= f.text_field :PR %>
+
+	  <%= f.label :BP , "Blood Pressure"%>
+	  <%= f.text_field :BP %>
+
+	  <%= f.label :Weight %>
+	  <%= f.text_field :Weight %>
+
+	  <%= f.label :Height %>
+	  <%= f.text_field :Height %>
+
+	  <%= f.label :SaO2 %>
+	  <%= f.text_field :SaO2 %>
+
+	  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+
+	<% end %>

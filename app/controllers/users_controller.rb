@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-	@user = User.find(params[:id])
+	@user = User.find(params[:id])	
+	
   end
 
   def new
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 	@user = User.new(user_params)
 	if @user.save
 	  sign_in @user
+	  @user.update_attribute(:lastlogin, Time.now)
 	  flash[:success] = "Welcome to the MDapp!"
 	  redirect_to @user
 	else
