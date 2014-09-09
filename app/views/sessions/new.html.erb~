@@ -4,9 +4,9 @@
 	
 	
 	<%= form_for(:session, url: sessions_path, :html => {class:"form-signin", role:"form"} ) do |f| %>
-	  <h2 class="form signin-heading">
+	  <legend>
 		Please sign in
-     </h2>
+     </legend>
 	  <%= f.label :email %>
 	  <%= f.email_field :email, :autofocus => true, class:"form-control", placeholder:"Email address" %>
 

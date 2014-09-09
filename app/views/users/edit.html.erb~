@@ -1,25 +1,71 @@
 <% provide(:title, 'Edit user') %>
-<h1>Update your profile</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-	<%= form_for(@user) do |f| %>
-	  <%= render 'shared/error_messages' %>
+<div class="container">
+  <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" style="margin-top: 50px;">
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+		<div class="panel-title">Update Profile</div>
+	  </div>
+	<div class="panel-body">
+	  <%= form_for(@user) do |f| %>
+	    <%= render 'shared/user_error_messages' %>
 	
-	  <%= f.label :name %>
-	  <%= f.text_field :name %>
+		<div class="form-group">
+	      <label class="col-md-3 control-label" for="name" style="text-align:right;">
+			Name
+		  </label>
+		  <div class="col-md-9">
+	      <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
+		  </div>
+	    </div>
 
-	  <%= f.label :email %>
-	  <%= f.text_field :email %>
 
-      <%= f.label :password %>
-	  <%= f.password_field :password %>
+	  <div class="form-group">
+	      <label class="col-md-3 control-label" for="email" style="text-align:right;">
+			Email
+		  </label>
+		  <div class="col-md-9">
+	  <%= f.text_field :email, class:"form-control", placeholder:"Email" %>
+		</div>
+	  </div>
 
-	  <%= f.label :password_confirmation, "Confirm Password" %>
-	  <%= f.password_field :password_confirmation %>
+	
+	  <div class="form-group">
+	      <label class="col-md-3 control-label" for="password" style="text-align:right;">
+			Password
+		  </label>
+		  <div class="col-md-9">
+	  <%= f.text_field :password, class:"form-control", placeholder:"Password"  %>
+		  </div>
+	  </div>
 
-		<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-	  <%end %>
 
+	  
+	  <div class="form-group">
+	      <label class="col-md-3 control-label" for="password_confirmation" style="text-align:right;">
+			Confirmation
+		  </label>
+		  <div class="col-md-9">
+	  <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Password Confirmation"  %>
+		  </div>
+	  </div>
+
+	  <div class="form-group">
+	      <label class="col-md-3 control-label" for="password_confirmation" style="text-align:right;">
+			Confirmation
+		  </label>
+		  <div class="col-md-9">
+	  <%= f.file_field :avatar , class:"form-control"%>
+		  </div>
+		</div>
+	
+	  
+	  <div class="col-md-offset-3 col-md-6" style="margin-top:20px;">
+	  <%= f.submit "Create my account", class: "btn btn-primary" %>
+	  </div>
+	  </div>
+	<% end %>
+	</div>
   </div>
 </div>
+

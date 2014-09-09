@@ -26,6 +26,16 @@ margin-right: auto;
   /*padding-left: 350px;*/
 }
 
+.panel-info > .panel-heading {
+    color: #000000;
+    background-color: $gray-lighter;
+    border-color: #000000;
+}
+
+.panel-info {
+    border-color: $gray-lighter;
+}
+
 section {
   overflow: auto;
 }

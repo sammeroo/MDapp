@@ -2,15 +2,15 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-	  <h2 > Add Patient </h2>
+	  <h2 style="text-align:center;"> Add Patient </h2>
 	  <hr class="colorgraph"></hr>
 	  <%= form_for(@patient) do |f| %>
 	  <%= render 'shared/patient_error_messages' %>
-	  <div class="col-x6-12 col-sm-12 col-md-12">
+	  <div class="col-x6-6 col-sm-6 col-md-6">
 	  <%= f.label :name %>
 	  <%= f.text_field :name %>
 	  </div>
-	  <div class="col-x6-12 col-sm-12 col-md-12">
+	  <div class="col-x6-6 col-sm-6 col-md-6">
 	  <%= f.label :email %>
 	  <%= f.text_field :email %>
 	  </div>

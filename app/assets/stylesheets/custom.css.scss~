@@ -26,6 +26,16 @@ margin-right: auto;
   /*padding-left: 350px;*/
 }
 
+.panel-info > .panel-heading {
+    color: #000000;
+    background-color: $gray-lighter;
+    border-color: #BCE8F1;
+}
+
+.panel-info {
+    border-color: $gray-lighter;
+}
+
 section {
   overflow: auto;
 }
@@ -54,7 +64,7 @@ text-align: center;
 }
 
 .spacer {
-    margin-top: 80px; /* define margin as you see fit */
+    margin-top: 10px; /* define margin as you see fit */
 }
 /* Profile Page */
 
