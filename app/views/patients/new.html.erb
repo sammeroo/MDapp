@@ -5,7 +5,7 @@
 	  <h2 style="text-align:center;"> Add Patient </h2>
 	  <hr class="colorgraph"></hr>
 	  <%= form_for(@patient) do |f| %>
-	  <%= render 'shared/patient_error_messages' %>
+	  <%= render 'shared/error_messages', object: f.object %>
 	  <div class="col-x6-6 col-sm-6 col-md-6">
 	  <%= f.label :name %>
 	  <%= f.text_field :name %>
@@ -92,6 +92,6 @@
 	  <%= f.submit "Create Patient", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:40px;" %>
 	  </div>
 	<% end %>
-	
+	</div>
   </div>
 </div>

@@ -1,10 +1,15 @@
 MDapp::Application.routes.draw do
   
   resources :users
-  resources :patients
+  resources :patients do
+    resources :visits, only: [:new, :create, :destroy]
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'
+  get "patients/display"
+  match '/new_patient_visit', to: 'visits#new', via: 'get'
   match '/new_patient', to: 'patients#new' , via: 'get'
+  match '/patient_index', to: 'patients#index' , via: 'get'
   match '/signup', to: 'users#new' , via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

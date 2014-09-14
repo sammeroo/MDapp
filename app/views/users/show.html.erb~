@@ -37,13 +37,13 @@
 		Actions
 	  </div>
 	  <div class="panel-body">
-		<%= link_to "Add Patient", 'new_patient_path' %>
+		<%= link_to "Add Patient", new_patient_path %>
 	  </div>
 	  <div class="panel-body">
 		<%= link_to "Find Patient", '#' %>
 	  </div>
 	  <div class="panel-body">
-		<%= link_to "Edit Patient", '#' %>
+    
 	  </div>
 	</div>
   </div>

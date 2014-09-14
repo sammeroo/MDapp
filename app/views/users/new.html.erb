@@ -8,7 +8,7 @@
 	  </div>
 	<div class="panel-body">
 	  <%= form_for(@user) do |f| %>
-	    <%= render 'shared/user_error_messages' %>
+	    <%= render 'shared/error_messages', object: f.object %>
 	
 		<div class="form-group">
 	      <label class="col-md-3 control-label" for="name" style="text-align:right;">

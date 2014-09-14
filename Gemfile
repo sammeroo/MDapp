@@ -10,6 +10,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'paperclip', '~> 3.0'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-slider-rails'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '0.15.1'
 

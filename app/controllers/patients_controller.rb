@@ -1,8 +1,23 @@
 class PatientsController < ApplicationController
-  before_action :signed_in_user, only: [:new]
+  before_action :signed_in_user, only: [:new, :index]
 
   def new
 	@patient = Patient.new
+  end
+
+  def show
+	if (params[:pid].nil?)
+	  @patient = Patient.find(params[:id])
+	  @visits = @patient.visits.paginate(page: params[:page])
+	  @visit = @patient.visits.build
+	else
+	  @patient = Patient.find_by(pid: params[:pid])
+	  @visits = @patient.visits.paginate(page: params[:page])
+	end
+  end
+
+  def index
+	@patients = Patient.paginate(page: params[:page])
   end
 
   def create
@@ -19,7 +34,7 @@ class PatientsController < ApplicationController
   private 
 
 	def patient_params
-	  params.require(:patient).permit(:name)
+	  params.require(:patient).permit!
 	end
 
 end
