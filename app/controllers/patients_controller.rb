@@ -13,11 +13,13 @@ class PatientsController < ApplicationController
 	else
 	  @patient = Patient.find_by(pid: params[:pid])
 	  @visits = @patient.visits.paginate(page: params[:page])
+	  @pdad = @patient.try(:pdad)
 	end
   end
 
   def index
-	@patients = Patient.paginate(page: params[:page])
+	 @search = Patient.search(params[:q])
+     @patients = @search.result.paginate(page: params[:page])
   end
 
   def create

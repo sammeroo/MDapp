@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+	  <div class="panel-heading">
+		Actions
+	  </div>
+	  <div class="panel-body">
+		<%= link_to "Add Visit", new_patient_visit_path(@patient) %>
+	  </div>
+	  <div class="panel-body">
+		<%= link_to "Add PDAD", new_patient_pdad_path(@patient) %>
+	  </div>
+	  <div class="panel-body">
+    	<%= link_to "Add Complaints", '#' %>
+	  </div>
+	</div>

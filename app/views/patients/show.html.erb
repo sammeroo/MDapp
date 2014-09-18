@@ -15,6 +15,12 @@
 	  </li>
 	  <li class="list-group-item text-right">
 		<span class="pull-left">
+		  <strong>Patient ID</strong>
+	 	</span>
+		<%= @patient.pid %>
+	  </li>
+	  <li class="list-group-item text-right">
+		<span class="pull-left">
 		  <strong>Registered</strong>
 	 	</span>
 		<%= @patient.created_at.strftime("%d %b. %Y") %>
@@ -44,29 +50,23 @@
 		<%= @patient.Weight %>
 	  </li>
 	</ul>
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-		Actions
-	  </div>
-	  <div class="panel-body">
-		<%= link_to "Add Visit", new_patient_visit_path(@patient) %>
-	  </div>
-	  <div class="panel-body">
-		<%= link_to "Add PDAD", '#' %>
-	  </div>
-	  <div class="panel-body">
-    	<%= link_to "Add Complaints", '#' %>
-	  </div>
-	</div>
+	<% if !(@visits.first.nil?) %>
+	  <%= render 'patients/review' %>
+	<% end %>
   </div>
   <div class="col-sm-9">
 	<ul id="myTab" class="nav nav-tabs">
 	  <li class="active">
-		<a data-toggle="tab" href="#">MOTMOT</a>
+		<a data-toggle="tab" href="#">Visits</a>
 	  </li>
 	</ul>
 	<div class="tab-content">
 	  <div id="home" class="tab-pane active">
+		<%= will_paginate @visits%>
+		  <ul class="visits">
+			<%= render @visits %>
+		  </ul>
+		<%= will_paginate @visits %>
 	  </div>
   </div>
 </div>

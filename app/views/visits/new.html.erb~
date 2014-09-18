@@ -12,12 +12,85 @@
 	  	  <%= f.text_field :patient_id, :readonly => true, :value => @patient.pid %>
 	    </div>
 
+		<div class="col-x6-9 col-sm-9 col-md-9" >
   		<%= f.label :wellness %>
   		<%= f.text_field :wellness, :class => 'slider' %>
+		</div>
 		
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
 
-  		
-  		<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :prob_since, "Have you had any problem's since your last visit?" %>
+		<%= f.text_field :prob_since, :placeholder => "Please specify if yes" %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :doct_since, "Have you visited a doctor since your last visit?" %>
+		<%= f.radio_button :doct_since, "Yes" %>
+		<%= f.label :doct_since_yes, "Yes"  %>
+		<%= f.radio_button :doct_since, "No" %> 
+		<%= f.label :doct_since_no, "No"  %>
+		</div>
+		
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :admits_since, "Have you been admitted to a hospital since your last visit?" %>
+		<%= f.text_field :admits_since, :placeholder => "Please specify if yes" %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :new_issues, "Have you experienced any new issues since your last visit?" %>
+		<%= f.text_field :new_issues, :placeholder => "Please specify if yes" %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :new_issues, "Have you experienced any side effects from our medication since your last visit?" %>
+		<%= f.text_field :side_effects, :placeholder => "Please specify if yes" %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :med_frequency, "Have you been taking your medicines with the frequency directed since your last visit?" %>
+		<%= f.text_field :med_frequency, :placeholder => "Please specify if no" %>
+		</div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :act, "ACT" %>
+	  	  <%= f.text_field :act %>
+	    </div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :cat, "CAT" %>
+	  	  <%= f.text_field :cat %>
+	    </div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :pild, "PILD" %>
+	  	  <%= f.text_field :pild %>
+	    </div>
+		<div class="col-x6-4 col-sm-4 col-md-4" >
+		<%= f.label :pft, "PFT?", :style => "width: 100%;" %>
+		<%= f.radio_button :pft, "Yes" %>
+		<%= f.label :pft_yes, "Yes"  %>
+		<%= f.radio_button :pft, "No" %> 
+		<%= f.label :pft_no, "No"  %>
+		</div>
+		
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+  		<%= f.submit "Add Visit", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:40px; margin-left: auto; margin-right: auto;" %>
 	  <% end %>
     </div>   
   </div>

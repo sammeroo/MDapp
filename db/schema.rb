@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905234212) do
+ActiveRecord::Schema.define(version: 20140918183250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "complaints", force: true do |t|
+    t.string   "cough_dur"
+    t.string   "cough_det"
+    t.string   "sob_dur"
+    t.string   "sob_det"
+    t.string   "expectoration_dur"
+    t.string   "expectoration_det"
+    t.string   "chestpain_dur"
+    t.string   "chestpain_det"
+    t.string   "wheezy_dur"
+    t.string   "wheezy_det"
+    t.string   "hemoptysis_dur"
+    t.string   "hemoptysis_det"
+    t.string   "systemicsymp_dur"
+    t.string   "systemicsymp_det"
+    t.string   "others"
+    t.string   "smoking_history"
+    t.string   "smoking_freq"
+    t.string   "smoking_current"
+    t.string   "comorbidity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drugs", force: true do |t|
+    t.string   "name"
+    t.string   "dosage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "patients", force: true do |t|
     t.string   "name"
@@ -82,7 +113,6 @@ ActiveRecord::Schema.define(version: 20140905234212) do
 
   create_table "visits", force: true do |t|
     t.integer  "patient_id"
-    t.integer  "welness"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "wellness"

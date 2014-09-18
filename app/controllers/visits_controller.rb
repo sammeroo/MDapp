@@ -7,7 +7,6 @@ class VisitsController < ApplicationController
   end
 
   def new
-
   end
 
   def create

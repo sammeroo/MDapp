@@ -1,0 +1,15 @@
+<% provide(:title , 'Add PDAD' ) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	  <h2 style="text-align:center;"> Add PDAD </h2>
+	  <hr class="colorgraph"></hr>
+      <%= form_for([@patient , @pdad ]) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+	
+
+	   <%= f.submit "Add PDAD", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:40px; margin-left: auto; margin-right: auto;" %>
+	  <% end %>
+    </div>   
+  </div>
+</div>
