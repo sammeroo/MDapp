@@ -1,0 +1,8 @@
+class ChangePatientIDtype < ActiveRecord::Migration
+  def change
+	change_column :pdads, :patient_id, :integer
+	change_column :complaints, :patient_id, :integer
+	change_column :visits, :patient_id, :integer
+	change_column :reports, :patient_id, :integer
+  end
+end

@@ -5,10 +5,27 @@
 	  <div class="panel-body">
 		<%= link_to "Add Visit", new_patient_visit_path(@patient) %>
 	  </div>
+	  <% if @patient.pdads.empty? %>
+	    <div class="panel-body">
+		  <%= link_to "Add PDAD", new_patient_pdad_path(@patient) %>
+	    </div>
+	  <% end %>
 	  <div class="panel-body">
-		<%= link_to "Add PDAD", new_patient_pdad_path(@patient) %>
+    	<%= link_to "Add Complaints", new_patient_complaint_path(@patient) %>
 	  </div>
 	  <div class="panel-body">
-    	<%= link_to "Add Complaints", '#' %>
+    	<%= link_to "Update Vitals", edit_patient_visit_path(:id => @patient.id , :patient_id => @patient.id) %>
+	  </div>
+	  <div class="panel-body">
+    	<%= link_to "Add Investigation", '#' %>
+	  </div>
+	  <div class="panel-body">
+    	<%= link_to "Add Report", new_patient_report_path(@patient) %>
+	  </div>
+	  <div class="panel-body">
+    	<%= link_to "Add Prescription", new_patient_prescription_path(@patient) %>
+	  </div>
+	  <div class="panel-body">
+    	<%= link_to "Add PFT Report", '#' %>
 	  </div>
 	</div>

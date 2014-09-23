@@ -29,13 +29,21 @@
 		</div>
 	  </div>
 
+	  <div class="form-group">
+	      <label class="col-md-3 control-label" for="email" style="text-align:right;">
+			Role
+		  </label>
+		  <div class="col-md-9">
+	  <%= f.text_field :role, class:"form-control", placeholder:"Role" %>
+		</div>
+	  </div>
 	
 	  <div class="form-group">
 	      <label class="col-md-3 control-label" for="password" style="text-align:right;">
 			Password
 		  </label>
 		  <div class="col-md-9">
-	  <%= f.text_field :password, class:"form-control", placeholder:"Password"  %>
+	  <%= f.password_field :password, class:"form-control", placeholder:"Password"  %>
 		  </div>
 	  </div>
 
@@ -52,7 +60,7 @@
 
 	  <div class="form-group">
 	      <label class="col-md-3 control-label" for="password_confirmation" style="text-align:right;">
-			Confirmation
+			Photo
 		  </label>
 		  <div class="col-md-9">
 	  <%= f.file_field :avatar , class:"form-control"%>

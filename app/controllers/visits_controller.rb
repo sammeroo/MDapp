@@ -3,10 +3,25 @@ class VisitsController < ApplicationController
   before_filter :load_parent
 
   def index
-
   end
 
   def new
+  end
+
+  def show
+  end
+
+  def edit
+	@visit = @patient.visits.first
+  end
+
+  def update
+    if @patient.visits.first.update_attributes(visit_params)
+      flash[:success] = "Vitals updated"
+	  redirect_to @patient
+    else
+      render 'edit'
+    end
   end
 
   def create

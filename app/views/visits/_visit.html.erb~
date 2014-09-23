@@ -1,0 +1,6 @@
+<tr>
+  <td> 
+    <%= visit.created_at.strftime("%d %b. %Y") %>
+  </td>
+</tr>
+

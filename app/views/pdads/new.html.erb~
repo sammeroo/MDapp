@@ -4,11 +4,153 @@
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 	  <h2 style="text-align:center;"> Add PDAD </h2>
 	  <hr class="colorgraph"></hr>
-      <%= form_for([@patient , @pdad ]) do |f| %>
+      <%= form_for([@patient , @patient.pdads.build ]) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
 	
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :cough_nasal_hist, "History or presence of cough and nasal congestion(allergic rhinitis)?" %>
+		<%= f.radio_button :cough_nasal_hist, "Yes" %>
+		<%= f.label :cough_nasal_hist_yes, "Yes"  %>
+		<%= f.radio_button :cough_nasal_hist, "No" %> 
+		<%= f.label :cough_nasal_hist_no, "No"  %>
+		</div>
 
-	   <%= f.submit "Add PDAD", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:40px; margin-left: auto; margin-right: auto;" %>
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :seasonal_symptoms, "Seasonal variation of symptoms?", :style => "margin-bottom:25px;"  %>
+		<%= f.radio_button :seasonal_symptoms, "Yes" %>
+		<%= f.label :seasonal_symptoms_yes, "Yes"  %>
+		<%= f.radio_button :seasonal_symptoms, "No" %> 
+		<%= f.label :seasonal_symptoms_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :family_hist_nasal, "Family history of nasal allergy?" %>
+		<%= f.text_field :family_hist_nasal, :placeholder => "Specify if yes(mother/father/sibling)" %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :seasonal_symptoms, "Family history of asthma?" , :style => "margin-right:50px;"  %>
+		<%= f.radio_button :family_hist_asthma, "Yes" %>
+		<%= f.label :family_hist_asthma_yes, "Yes"  %>
+		<%= f.radio_button :family_hist_asthma, "No" %> 
+		<%= f.label :family_hist_asthma_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :med_relief, "History of quick relief with medicine?" , :style => "margin-right:50px;"  %>
+		<%= f.radio_button :med_relief, "Yes" %>
+		<%= f.label :med_relief_yes, "Yes"  %>
+		<%= f.radio_button :med_relief, "No" %> 
+		<%= f.label :med_relief_no, "No"  %>
+		</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :steroid_response, "History of good response to steroids?" , :style => "margin-right:50px;"  %>
+		<%= f.radio_button :steroid_response, "Yes" %>
+		<%= f.label :steroid_response_yes, "Yes"  %>
+		<%= f.radio_button :steroid_response, "No" %> 
+		<%= f.label :steroid_response_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :intermittent_symp, "Intermittent symptoms?" , :style => "margin-right:60px;"  %>
+		<%= f.radio_button :intermittent_symp, "Yes" %>
+		<%= f.label :intermittent_symp_yes, "Yes"  %>
+		<%= f.radio_button :intermittent_symp, "No" %> 
+		<%= f.label :intermittent_symp_no, "No"  %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :cont_w_int_excb, "Continous symptoms with intermittent Exacerbation?" , :style => "margin-right:60px;"  %>
+		<%= f.radio_button :cont_w_int_excb, "Yes" %>
+		<%= f.label :cont_w_int_excb_yes, "Yes"  %>
+		<%= f.radio_button :cont_w_int_excb, "No" %> 
+		<%= f.label :cont_w_int_excb_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :high_ige, "High IgE" , :style => "margin-right:160px;"  %>
+		<%= f.radio_button :high_ige, "Yes" %>
+		<%= f.label :high_ige_yes, "Yes"  %>
+		<%= f.radio_button :high_ige, "No" %> 
+		<%= f.label :high_ige_no, "No"  %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :skin_allergy_hist, "History of presence of skin allergy?" , :style => "margin-right:60px;"  %>
+		<%= f.radio_button :skin_allergy_hist, "Yes" %>
+		<%= f.label :skin_allergy_hist_yes, "Yes"  %>
+		<%= f.radio_button :skin_allergy_hist, "No" %> 
+		<%= f.label :skin_allergy_hist_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :eczema_hist, "History of presence of eczeme?" , :style => "margin-right:0px;"  %>
+		<%= f.radio_button :eczema_hist, "Yes" %>
+		<%= f.label :eczema_hist_yes, "Yes"  %>
+		<%= f.radio_button :eczema_hist, "No" %> 
+		<%= f.label :eczema_hist_no, "No"  %>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6" >
+		<%= f.label :conjunctiv_hist, "History of presence of allergic conjunctivitis?" , :style => "margin-right:60px;"  %>
+		<%= f.radio_button :conjunctiv_hist, "Yes" %>
+		<%= f.label :conjunctiv_hist_yes, "Yes"  %>
+		<%= f.radio_button :conjunctiv_hist, "No" %> 
+		<%= f.label :conjunctiv_hist_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6 col-x6-offset-3 col-sm-offset-3 col-md-offset-3" >
+		<%= f.label :drug_allergy_hist, "History of drug allergy if any?" , :style => "margin-right:60px;"  %>
+		<%= f.radio_button :drug_allergy_hist, "Yes" %>
+		<%= f.label :drug_allergy_hist_yes, "Yes"  %>
+		<%= f.radio_button :drug_allergy_hist, "No" %> 
+		<%= f.label :drug_allergy_hist_no, "No"  %>
+		</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+		<hr class="colorgraph"></hr>
+	    <%= f.submit "Add PDAD", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:10px; margin-left: auto; margin-right: auto;" %>
 	  <% end %>
     </div>   
   </div>

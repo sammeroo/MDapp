@@ -1,3 +1,9 @@
-<li>
-  <%= visit.created_at %>
-</li>
+<tr>
+  <td> 
+    <%= visit.created_at.strftime("%d %b. %Y") %>
+  </td>
+  <td> 
+    <%= visit.wellness %>
+  </td>
+</tr>
+

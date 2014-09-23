@@ -2,14 +2,19 @@ MDapp::Application.routes.draw do
   
   resources :users
   resources :patients do
-    resources :visits, only: [:new, :create, :destroy]
+    resources :visits
+	resources :reports, only: [:new, :create, :destroy]
+	resources :consent_forms, only: [:new, :create, :destroy]
+	resources :prescriptions, only: [:new, :create, :destroy]
 	resources :pdads, only: [:new, :create, :destroy]
+	resources :complaints, only: [:new, :create, :destroy]
   end
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'
   get "patients/display"
   match '/new_patient_visit', to: 'visits#new', via: 'get'
   match '/new_patient_pdad', to: 'pdads#new', via: 'get'
+  match '/new_patient_complaint', to: 'complaints#new', via: 'get'
   match '/new_patient', to: 'patients#new' , via: 'get'
   match '/patient_index', to: 'patients#index' , via: 'get'
   match '/signup', to: 'users#new' , via: 'get'

@@ -1,0 +1,170 @@
+<% provide(:title , 'Add PDAD' ) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	  <h2 style="text-align:center;"> Add Complaint </h2>
+	  <hr class="colorgraph"></hr>
+      <%= form_for([@patient , @patient.complaints.build ]) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :cough_dur, "Cough duration" %>
+	  	  <%= f.text_field :cough_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :cough_det, "Cough details" %>
+	  	  <%= f.text_field :cough_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :sob_dur, "SOB duration" %>
+	  	  <%= f.text_field :sob_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :sob_det, "SOB details" %>
+	  	  <%= f.text_field :sob_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :expectoration_dur, "Expectoration duration" %>
+	  	  <%= f.text_field :expectoration_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :expectoration_det, "Expectoration details" %>
+	  	  <%= f.text_field :expectoration_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :chestpain_dur, "Chestpain duration" %>
+	  	  <%= f.text_field :chestpain_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :chestpain_det, "Chestpain details" %>
+	  	  <%= f.text_field :chestpain_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :wheezy_dur, "Wheezy duration" %>
+	  	  <%= f.text_field :wheezy_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :wheezy_det, "Wheezy details" %>
+	  	  <%= f.text_field :wheezy_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :hemoptysis_dur, "Hemoptysis duration" %>
+	  	  <%= f.text_field :hemoptysis_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :hemoptysis_det, "Hemoptysis details" %>
+	  	  <%= f.text_field :hemoptysis_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+	  	  <%= f.label :systemicsymp_dur, "Systemic Symptoms?" %>
+	  	  <%= f.text_field :systemicsymp_dur %>
+	  	</div>
+		
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :systemicsymp_det, "Systemic Symptoms details" %>
+	  	  <%= f.text_field :systemicsymp_det %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :others, "Others" %>
+	  	  <%= f.text_field :others %>
+	  	</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :smoking_history, "History of Smoking" %>
+	  	  <%= f.text_field :smoking_history, :placeholder => "Cigarette, Bidi, Others" %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :smoking_freq, "Frequency of smoking" %>
+	  	  <%= f.text_field :smoking_freq, :placeholder => "How many per day for how many years" %>
+	  	</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :smoking_current, "Current smoking habit" %>
+	  	  <%= f.text_field :smoking_current, :placeholder => "Continuing/Reduced/Stopeed for how long" %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<div class="col-x6-6 col-sm-6 col-md-6">
+		  <%= f.label :comorbidity, "Comorbidity as DM(type 1/2)/HTN/Hypothyroidism/IHD/Hypenurecemia/Others any important note" %>
+	  	  <%= f.text_field :comorbidity %>
+	  	</div>
+
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<hr class="colorgraph"></hr>
+		<%= f.submit "Add Complaint", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:10px; margin-left: auto; margin-right: auto;" %>
+	  <% end %>
+    </div>   
+  </div>
+</div>

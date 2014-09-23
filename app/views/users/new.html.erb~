@@ -8,7 +8,7 @@
 	  </div>
 	<div class="panel-body">
 	  <%= form_for(@user) do |f| %>
-	    <%= render 'shared/user_error_messages' %>
+	    <%= render 'shared/error_messages', object: f.object %>
 	
 		<div class="form-group">
 	      <label class="col-md-3 control-label" for="name" style="text-align:right;">
@@ -35,7 +35,7 @@
 			Password
 		  </label>
 		  <div class="col-md-9">
-	  <%= f.text_field :password, class:"form-control", placeholder:"Password"  %>
+	  <%= f.password_field :password, class:"form-control", placeholder:"Password"  %>
 		  </div>
 	  </div>
 
@@ -52,7 +52,7 @@
 
 	  <div class="form-group">
 	      <label class="col-md-3 control-label" for="password_confirmation" style="text-align:right;">
-			Confirmation
+			Photo
 		  </label>
 		  <div class="col-md-9">
 	  <%= f.file_field :avatar , class:"form-control"%>

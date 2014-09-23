@@ -1,4 +1,10 @@
-<li>
-  <%= link_to patient.name, :controller => "patients", :action => "display", :pid => patient.pid  %>
 
-</li>
+<tr>
+  <td> <%= link_to patient.pid, :controller => "patients", :action => "display", :pid => patient.pid  %>
+  <td>
+    <%= link_to patient.name, :controller => "patients", :action => "display", :pid => patient.pid  %>
+  </td>
+  <td>
+	<%= patient.phone %>
+  </td>
+</tr>

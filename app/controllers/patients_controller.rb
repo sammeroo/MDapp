@@ -13,7 +13,10 @@ class PatientsController < ApplicationController
 	else
 	  @patient = Patient.find_by(pid: params[:pid])
 	  @visits = @patient.visits.paginate(page: params[:page])
-	  @pdad = @patient.try(:pdad)
+	  @pdads = @patient.pdads
+	  @new_visit = @patient.visits.first
+	  @reports = @patient.reports
+ 	  @complaints = @patient.complaints.paginate(page: params[:page])
 	end
   end
 
@@ -26,7 +29,7 @@ class PatientsController < ApplicationController
 	@patient = Patient.new(patient_params)
 	if @patient.save
 	  flash[:success] = "Patient succesfully added"
-	  redirect_to current_user
+	  redirect_to @patient
 	else
 	  render 'new'
 	end

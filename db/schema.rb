@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918183250) do
+ActiveRecord::Schema.define(version: 20140923100634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,21 +38,40 @@ ActiveRecord::Schema.define(version: 20140918183250) do
     t.string   "comorbidity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "patient_id"
+    t.string   "hist_pleu"
+  end
+
+  create_table "consent_forms", force: true do |t|
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "drugs", force: true do |t|
-    t.string   "name"
+    t.string   "trade_name"
     t.string   "dosage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "generic_name"
+    t.string   "duration"
+  end
+
+  create_table "haematologies", force: true do |t|
+    t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "patients", force: true do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pid"
     t.string   "occupation"
     t.integer  "age"
     t.string   "sex"
@@ -68,12 +87,11 @@ ActiveRecord::Schema.define(version: 20140918183250) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.date     "dob"
+    t.string   "phone"
+    t.string   "pid"
   end
 
-  add_index "patients", ["pid"], name: "index_patients_on_pid", unique: true, using: :btree
-
   create_table "pdads", force: true do |t|
-    t.integer  "patient_id"
     t.string   "cough_nasal_hist"
     t.string   "seasonal_symptoms"
     t.string   "family_hist_nasal"
@@ -89,9 +107,26 @@ ActiveRecord::Schema.define(version: 20140918183250) do
     t.string   "drug_allergy_hist"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "patient_id"
   end
 
-  add_index "pdads", ["patient_id"], name: "index_pdads_on_patient_id", using: :btree
+  create_table "prescriptions", force: true do |t|
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reports", force: true do |t|
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "type"
+    t.integer  "patient_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -106,13 +141,13 @@ ActiveRecord::Schema.define(version: 20140918183250) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.datetime "lastlogin"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   create_table "visits", force: true do |t|
-    t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "wellness"
@@ -127,9 +162,15 @@ ActiveRecord::Schema.define(version: 20140918183250) do
     t.integer  "cat"
     t.integer  "pild"
     t.string   "pft"
+    t.decimal  "PR",            precision: 5, scale: 2
+    t.string   "BP"
+    t.decimal  "Weight",        precision: 5, scale: 2
+    t.decimal  "Height",        precision: 5, scale: 2
+    t.decimal  "SaO2",          precision: 4, scale: 2
+    t.integer  "patient_id"
+    t.integer  "fee"
   end
 
   add_index "visits", ["created_at"], name: "index_visits_on_created_at", using: :btree
-  add_index "visits", ["patient_id"], name: "index_visits_on_patient_id", using: :btree
 
 end

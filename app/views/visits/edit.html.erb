@@ -1,0 +1,45 @@
+<% provide(:title , 'Add Vitals' ) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	  <h2 style="text-align:center;"> Add Vitals </h2>
+	  <hr class="colorgraph"></hr>
+      <%= form_for([@patient , @patient.visits.first ]) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+		<div class="col-x6-3 col-sm-3 col-md-3">
+	  	  <%= f.label :PR, "Pulse Rate" %>
+	      <%= f.text_field :PR %>
+	     </div>
+
+		<div class="col-x6-3 col-sm-3 col-md-3">
+	  	  <%= f.label :BP, "Blood Pressure" %>
+	      <%= f.text_field :BP %>
+	     </div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :Weight, "Weight" %>
+	      <%= f.text_field :Weight %>
+	     </div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :Height %>
+	      <%= f.text_field :Height %>
+	     </div>
+
+		<div class="col-x6-2 col-sm-2 col-md-2">
+	  	  <%= f.label :SaO2 %>
+	      <%= f.text_field :SaO2 %>
+	     </div>
+		<div class="row spacer">
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+		</div>
+
+		<hr class="colorgraph"></hr>
+  		<%= f.submit "Add Vitals", class: "btn btn-lg btn-block btn-primary col-xs-offset-6 col-md-offset-6", style:"margin-top:40px; margin-left: auto; margin-right: auto;" %>
+	  <% end %>
+    </div>   
+  </div>
+</div>

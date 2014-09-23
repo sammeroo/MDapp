@@ -1,26 +1,64 @@
 <% provide(:title, 'Find Patients') %>
-<h1>All Patients</h1>
+<h1>Find Patients</h1>
 
 
-
-
+<div class="container">
+<div class="row">
+<div class="col-sm-8 col-md-6">
 <%= search_form_for @search do |f| %>
-  <div class="field">
+  
+	<div class="col-sm-3 col-md-3">
     <%= f.label :name_cont, "Name contains" %>
     <%= f.text_field :name_cont %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+	</div>
+  
+	<div class="col-sm-3 col-md-3">
+    <%= f.label :pid_eq, "Patient ID" %>
+    <%= f.text_field :pid_eq %>
+	</div>
+
+	<div class="col-sm-3 col-md-3">
+    <%= f.label :phone_eq, "Phone Number" %>
+    <%= f.text_field :phone_eq %>
+	</div>
+
+  <%= button_tag( :class => "btn btn-default", :style => "margin-top:20px; margin-left:0px;") do %>
+  <i class="glyphicon glyphicon-search"></i>
+  <% end %>
 <% end %>
-
-
+</div>
+</div>
+</div>
     
+
 
 
 <%= will_paginate @patients %>
 
-    
-<ul class="patients">
-	<%= render @patients %>
-</ul>
+<div class="row", style="margin-top:20px;">
+  <div class="col-lg-10">
+	<div class="panel panel-default">
+	  <div class="panel-heading>
+		Search Results
+	  </div>
+	  <div class="panel-body">
+	    <div class="table-responsive">
+		  <table class="table table-striped table-bordered table-hover">
+			<thead>
+			  <tr> 
+				<th>ID </th>
+			    <th> Patient Name </th>
+				<th> Phone Number </th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <%= render @patients %>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
 
 <%= will_paginate @patients %>
